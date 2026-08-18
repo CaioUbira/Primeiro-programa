@@ -1,3 +1,12 @@
 ﻿// Screen Sound 
+//camelcase
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
-Console.WriteLine(mensagemDeBoasVindas);
+//
+void ExibirMesagemDeBoasVindas()
+{
+    Console.WriteLine("************************");
+    Console.WriteLine(mensagemDeBoasVindas);
+    Console.WriteLine("************************");
+
+}
+ExibirMesagemDeBoasVindas();
