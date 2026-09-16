@@ -32,13 +32,35 @@ void ExibirOpçoesDoMeni()
 
     //  "Parse" serve para converter o texto (string) que o usuário digitou em um número inteiro
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    if (opcaoEscolhidaNumerica == 1)
+    switch (opcaoEscolhidaNumerica)
+
+    /* SWITCH
+     O switch é usado para verificar o valor de uma variável
+     e executar um bloco de código de acordo com esse valor.
+     Ele é uma alternativa ao uso de vários if e else if.*/
+
+    /*CASE
+     O case representa uma possível opção dentro do switch.
+     Quando o valor da variável for igual ao valor do case,
+     o código daquele case será executado.*/
+
+    /*BREAK
+     O break encerra a execução do case atual e sai do switch.
+     Sem o break, o programa pode continuar a execução
+     de outros casos, dependendo da forma como o switch foi escrito.*/
     {
-        Console.WriteLine(" Voce escolhe a opção " + opcaoEscolhidaNumerica);
-    }
-    else if (opcaoEscolhidaNumerica == 2)
-    {
-        Console.WriteLine(" Voce escolhe a opção " + opcaoEscolhidaNumerica);
+        case 1: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica); 
+            break;
+        case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 3: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 5: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        default: Console.WriteLine(" Opção invalida");
+            break;
     }
 }
 ExibirMesagemDeBoasVindas();
