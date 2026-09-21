@@ -16,7 +16,7 @@ void ExibirMesagemDeBoasVindas()
 
     Console.WriteLine(mensagemDeBoasVindas); 
 }
-void ExibirOpçoesDoMeni()
+void ExibirOpçoesDoMenu()
 {
     Console.WriteLine("\nDigite 1 para registarr uma banda ");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
@@ -49,7 +49,7 @@ void ExibirOpçoesDoMeni()
      Sem o break, o programa pode continuar a execução
      de outros casos, dependendo da forma como o switch foi escrito.*/
     {
-        case 1: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica); 
+        case 1: RegistrarBanda(); 
             break;
         case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
@@ -63,5 +63,17 @@ void ExibirOpçoesDoMeni()
             break;
     }
 }
+    void RegistrarBanda()
+
+    {
+        Console.Clear();
+        Console.WriteLine("Registro de bandas");
+        Console.WriteLine("Digite o nome da banda que deseja registrar");
+        string nomeDaBanda = Console.ReadLine()!;
+        Console.WriteLine($"A banda {nomeDaBanda} foi registrado com sucesso");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpçoesDoMenu();
+    }
 ExibirMesagemDeBoasVindas();
-ExibirOpçoesDoMeni();
+ExibirOpçoesDoMenu();
