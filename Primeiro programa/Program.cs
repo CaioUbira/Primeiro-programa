@@ -2,7 +2,7 @@
 
 //camelcase A primeira palavra começa com letra minúscula e as próximas começam com maiúscula.
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
-
+List<string> listaDasBandas = new List<string> { "Rolling Stones", "Charlie Brown Jr" };
 //PascalCase todas as palavras começam com letra maiúscula, inclusive a primeira.
 void ExibirLogo()
 {// Verbatim Litera É especialmente útil para caminhos de arquivos, textos com muitas \ e strings multilinha.
@@ -14,11 +14,11 @@ void ExibirLogo()
 ██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║  ██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░");
 
-    Console.WriteLine(mensagemDeBoasVindas); 
+    Console.WriteLine(mensagemDeBoasVindas);
 }
 void ExibirOpçoesDoMenu()
 {
-    
+    ExibirLogo();
     Console.WriteLine("\nDigite 1 para registarr uma banda ");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avaliar uma banda");
@@ -48,31 +48,55 @@ void ExibirOpçoesDoMenu()
      Sem o break, o programa pode continuar a execução
      de outros casos, dependendo da forma como o switch foi escrito.*/
     {
-        case 1: RegistrarBanda(); 
+        case 1:
+            RegistrarBanda();
             break;
-        case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 2:
+            MostrarBandasRegistradas();
             break;
-        case 3: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 3:
+            Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 4:
+            Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        case 5: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 5:
+            Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        default: Console.WriteLine(" Opção invalida");
+        default:
+            Console.WriteLine(" Opção invalida");
             break;
     }
 }
-    void RegistrarBanda()
+void RegistrarBanda()
 
+{
+    Console.Clear();
+    Console.WriteLine("Registro de bandas");
+    Console.WriteLine("Digite o nome da banda que deseja registrar");
+    string nomeDaBanda = Console.ReadLine()!;
+    listaDasBandas.Add(nomeDaBanda);
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrado com sucesso");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpçoesDoMenu();
+}
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("\nExibindo todas as bandas registradas\n");
+    for (int i = 0; i < listaDasBandas.Count; i++)
     {
-        Console.Clear();
-        Console.WriteLine("Registro de bandas");
-        Console.WriteLine("Digite o nome da banda que deseja registrar");
-        string nomeDaBanda = Console.ReadLine()!;
-        Console.WriteLine($"A banda {nomeDaBanda} foi registrado com sucesso");
-        Thread.Sleep(2000);
-        Console.Clear();
-        ExibirOpçoesDoMenu();
+        // O $ antes de uma string permite colocar variáveis dentro do texto usando {}.
+        //As chaves {} podem ter funções diferentes dependendo de onde aparecem. com $ significa:"Coloque aqui o valor de nome."
+        // Os colchetes [] aparecem principalmente quando trabalhamos com listas, arrays e posições/índices.
+        Console.WriteLine($"Banda: {listaDasBandas[i]}");
     }
+    Console.WriteLine("\ndigite uma tecla para voltar o menu principal");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpçoesDoMenu();
+}
+
 ExibirLogo();
 ExibirOpçoesDoMenu();
