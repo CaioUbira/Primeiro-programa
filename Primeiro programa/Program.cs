@@ -4,7 +4,7 @@
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
 
 //PascalCase todas as palavras começam com letra maiúscula, inclusive a primeira.
-void ExibirMesagemDeBoasVindas()
+void ExibirLogo()
 {// Verbatim Litera É especialmente útil para caminhos de arquivos, textos com muitas \ e strings multilinha.
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -18,6 +18,7 @@ void ExibirMesagemDeBoasVindas()
 }
 void ExibirOpçoesDoMenu()
 {
+    
     Console.WriteLine("\nDigite 1 para registarr uma banda ");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avaliar uma banda");
@@ -32,13 +33,11 @@ void ExibirOpçoesDoMenu()
 
     //  "Parse" serve para converter o texto (string) que o usuário digitou em um número inteiro
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    switch (opcaoEscolhidaNumerica)
-
     /* SWITCH
      O switch é usado para verificar o valor de uma variável
      e executar um bloco de código de acordo com esse valor.
      Ele é uma alternativa ao uso de vários if e else if.*/
-
+    switch (opcaoEscolhidaNumerica)
     /*CASE
      O case representa uma possível opção dentro do switch.
      Quando o valor da variável for igual ao valor do case,
@@ -75,5 +74,5 @@ void ExibirOpçoesDoMenu()
         Console.Clear();
         ExibirOpçoesDoMenu();
     }
-ExibirMesagemDeBoasVindas();
+ExibirLogo();
 ExibirOpçoesDoMenu();
