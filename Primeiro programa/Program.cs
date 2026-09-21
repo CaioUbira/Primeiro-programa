@@ -85,13 +85,20 @@ void MostrarBandasRegistradas()
 {
     Console.Clear();
     Console.WriteLine("\nExibindo todas as bandas registradas\n");
-    for (int i = 0; i < listaDasBandas.Count; i++)
+    //for (int i = 0; i < listaDasBandas.Count; i++)
+    //{
+    // O $ antes de uma string permite colocar variáveis dentro do texto usando {}.
+    //As chaves {} podem ter funções diferentes dependendo de onde aparecem. com $ significa:"Coloque aqui o valor de nome."
+    // Os colchetes [] aparecem principalmente quando trabalhamos com listas, arrays e posições/índices.
+    //Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    //}
+
+    foreach (string banda in listaDasBandas)
     {
-        // O $ antes de uma string permite colocar variáveis dentro do texto usando {}.
-        //As chaves {} podem ter funções diferentes dependendo de onde aparecem. com $ significa:"Coloque aqui o valor de nome."
-        // Os colchetes [] aparecem principalmente quando trabalhamos com listas, arrays e posições/índices.
-        Console.WriteLine($"Banda: {listaDasBandas[i]}");
+        Console.WriteLine($"Banda: {banda}");
     }
+
+
     Console.WriteLine("\ndigite uma tecla para voltar o menu principal");
     Console.ReadKey();
     Console.Clear();
