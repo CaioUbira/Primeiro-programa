@@ -112,5 +112,5 @@ void ExibirTituloDaopcao(string titulo)
     Console.WriteLine(titulo);
     Console.WriteLine(astericos + "\n");
 }
-
+ExibirLogo();
 ExibirOpçoesDoMenu();
