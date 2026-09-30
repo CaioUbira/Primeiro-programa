@@ -2,8 +2,11 @@
 
 //camelcase A primeira palavra começa com letra minúscula e as próximas começam com maiúscula.
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string> { "Rolling Stones", "Charlie Brown Jr" };
+//List<string> listaDasBandas = new List<string> { "Rolling Stones", "Charlie Brown Jr" };
 //PascalCase todas as palavras começam com letra maiúscula, inclusive a primeira.
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+bandasRegistradas.Add("Link Park", new List<int> { 10, 8, 7 });
+bandasRegistradas.Add("ADC", new List<int>());
 void ExibirLogo()
 {// Verbatim Litera É especialmente útil para caminhos de arquivos, textos com muitas \ e strings multilinha.
     Console.WriteLine(@"
@@ -75,7 +78,7 @@ void RegistrarBanda()
     ExibirTituloDaopcao("Registro de banda");
     Console.WriteLine("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
-    listaDasBandas.Add(nomeDaBanda);
+    bandasRegistradas.Add(nomeDaBanda, new List<int>());
     Console.WriteLine($"A banda {nomeDaBanda} foi registrado com sucesso");
     Thread.Sleep(2000);
     Console.Clear();
@@ -93,7 +96,7 @@ void MostrarBandasRegistradas()
     //Console.WriteLine($"Banda: {listaDasBandas[i]}");
     //}
 
-    foreach (string banda in listaDasBandas)
+    foreach (string banda in bandasRegistradas.Keys)
     {
         Console.WriteLine($"Banda: {banda}");
     }
@@ -112,5 +115,5 @@ void ExibirTituloDaopcao(string titulo)
     Console.WriteLine(titulo);
     Console.WriteLine(astericos + "\n");
 }
-ExibirLogo();
+
 ExibirOpçoesDoMenu();
