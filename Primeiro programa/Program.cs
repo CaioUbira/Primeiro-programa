@@ -83,8 +83,15 @@ void RegistrarBanda()
     ExibirTituloDaopcao("Registro de banda");
     Console.WriteLine("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
-    bandasRegistradas.Add(nomeDaBanda, new List<int>());
-    Console.WriteLine($"A banda {nomeDaBanda} foi registrado com sucesso");
+    if (!bandasRegistradas.ContainsKey(nomeDaBanda))
+    {
+        bandasRegistradas.Add(nomeDaBanda, new List<int>());
+        Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeDaBanda} já está cadastrada!");
+    }
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpçoesDoMenu();
