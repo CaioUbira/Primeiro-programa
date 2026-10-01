@@ -140,7 +140,15 @@ void AvaliarUmaBanda()
     if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
         Console.Write($"Qual a nota que a banda{nomeDaBanda} merece: ");
-        int nota = int.Parse(Console.ReadLine()!);
+        if (int.TryParse(Console.ReadLine(), out int nota))
+        {
+            bandasRegistradas[nomeDaBanda].Add(nota);
+            Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
+        }
+        else
+        {
+            Console.WriteLine("Digite uma nota válida!");
+        }
         bandasRegistradas[nomeDaBanda].Add(nota);
         Console.WriteLine($"\nA nota {nota} foi registrada com sucessp para a banda{nomeDaBanda}");
         Thread.Sleep(4000);
